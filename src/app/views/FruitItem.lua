@@ -4,7 +4,7 @@
 local FruitItem = class("FruitItem", function (x, y, fruitIndex)
     
     local fruitIndex = fruitIndex or math.random(1,8)
-    local sprite = display.newSprite("#fruit"..fruitIndex..'_1.png')
+    local sprite = ccui.ImageView:create("fruit"..fruitIndex..'_1.png', ccui.TextureResType.plistType)
     sprite.fruitIndex = fruitIndex
     sprite.x = x
     sprite.y = y
@@ -20,14 +20,11 @@ function FruitItem:setActive(active)
 
     local frame
     if active then
-        frame = display.newSpriteFrame("#fruit"..self.fruitIndex..'_2.png') 
+        self:loadTexture("fruit"..self.fruitIndex..'_2.png', ccui.TextureResType.plistType )	
 
     else
-        frame = display.newSpriteFrame("#fruit"..self.fruitIndex..'_1.png') 
-
+        self:loadTexture("fruit"..self.fruitIndex..'_1.png', ccui.TextureResType.plistType )
     end
-
-    self:setSpriteFrame(frame)
 
     if active then
 

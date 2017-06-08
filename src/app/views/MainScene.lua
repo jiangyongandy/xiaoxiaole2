@@ -17,7 +17,7 @@ function MainScene:onCreate()
     display.loadSpriteFrames("fruit.plist", "fruit.png")
 
     self.btn:addClickEventListener(function()
-        printf("btn click")
+        --printf("btn click")
         -- 无转场动画
         --self:getApp():enterScene("PlayScene")
         -- 有转场动画
